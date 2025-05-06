@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Clone Maple repository (variable branch)
         run: |
-          git clone --depth 1 -b 7.1 https://github.com/subframe7536/maple-font.git
+          git clone https://github.com/subframe7536/maple-font.git && cd maple-font && git checkout tags/7.1
 
       - name: Install GNU grep and sed and override system utilities
         if: runner.os == 'macOS'
