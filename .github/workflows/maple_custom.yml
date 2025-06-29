@@ -63,7 +63,7 @@ jobs:
               sed -i \
                   -e '/^[[:space:]]*# ++$/,/^[[:space:]]*} plus_plus.liga;$/d' \
                   -e '/^[[:space:]]*# +++$/,/^[[:space:]]*} plus_plus_plus.liga;$/d' \
-                  -e '/^[[:space:]]*# ==$/,/^[[:space:]]*} equal_equal.liga;$/d' \
+                  -e '/^} calt;$/i\  sub equal_equal.liga by equal_equal.liga.ss01;' \
                   "$file"
           done
 
