@@ -57,6 +57,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Remove operator ligatures (++, +++, ==) from feature files
+        if: 0 == 1
         working-directory: maple-font
         run: |
           for file in source/features/{regular,italic}.fea; do
@@ -69,7 +70,7 @@ jobs:
 
       - name: Build custom font
         working-directory: maple-font
-        run: python build.py --apply-fea-file --feat cv01,cv02,cv03,cv32,cv34,cv35,zero --no-cn --no-nerd-font
+        run: python build.py --feat cv01,cv02,cv03,cv32,cv34,cv35,zero --apply-fea-file --no-cn --no-nerd-font
 
       - name: Prepare files for artifact
         run: |
