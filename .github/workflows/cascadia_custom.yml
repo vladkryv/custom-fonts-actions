@@ -72,7 +72,7 @@ jobs:
           python3 -m venv fonttools-venv
           . fonttools-venv/bin/activate
 
-          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install setuptools==81.0.0
           python -m pip install -r requirements.txt
           python -m pip install git+https://github.com/daltonmaag/vttLib.git
 
