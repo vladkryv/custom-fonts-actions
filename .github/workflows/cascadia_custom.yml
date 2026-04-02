@@ -60,7 +60,7 @@ jobs:
             echo "VERSION=$CURRENT_DATE" >> $GITHUB_ENV
           fi
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -113,7 +113,7 @@ jobs:
           mkdir -p artifacts/CascadiaCustom_${{ env.VERSION }}
           cp -r cascadia-code/build/* artifacts/CascadiaCustom_${{ env.VERSION }}/
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: CascadiaCustom_${{ env.VERSION }}
           path: artifacts/CascadiaCustom_${{ env.VERSION }}

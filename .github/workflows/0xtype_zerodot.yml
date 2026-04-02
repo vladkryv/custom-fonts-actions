@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: 0xType/0xProto
 
@@ -32,7 +32,7 @@ jobs:
           echo "ewpnbHlwaG5hbWUgPSB6ZXJvOwpsYXllcnMgPSAoCnsKYXNzb2NpYXRlZE1hc3RlcklkID0gbTAxOwpsYXllcklkID0gIjkzMTk2QUY2LUVEMDktNDA0My04QkFGLTdCRkNFM0UxNzMzOCI7Cm5hbWUgPSAiRmViIDE0LCAyNCBhdCAxOToyOSI7CnNoYXBlcyA9ICgKewpjbG9zZWQgPSAxOwpub2RlcyA9ICgKKDUxMCwtMTYsbyksCig1NjUsMTQzLG8pLAooNTY1LDM1NSxjcyksCig1NjUsNTY3LG8pLAooNTEwLDcyNixvKSwKKDMxMiw3MjYsY3MpLAooMTE1LDcyNixvKSwKKDU1LDU2NyxvKSwKKDU1LDM1NSxjcyksCig1NSwxNDMsbyksCigxMTUsLTE2LG8pLAooMzEyLC0xNixjcykKKTsKfSwKewpjbG9zZWQgPSAxOwpub2RlcyA9ICgKKDE3Miw3MyxvKSwKKDE1MywxOTUsbyksCigxNTMsMzU2LGNzKSwKKDE1Myw1MTYsbyksCigxNzIsNjM3LG8pLAooMzEyLDYzNyxjcyksCig0NTIsNjM3LG8pLAooNDY3LDUxNixvKSwKKDQ2NywzNTYsY3MpLAooNDY3LDE5NSxvKSwKKDQ1Miw3MyxvKSwKKDMxMiw3MyxjcykKKTsKfSwKewpjbG9zZWQgPSAxOwpub2RlcyA9ICgKKDIwOSwxMDgsbCksCig0OTUsNjAzLGwpLAooNDE1LDYwMixsKSwKKDEyOSwxMDgsbCkKKTsKfQopOwp3aWR0aCA9IDYyMDsKfSwKewpsYXllcklkID0gbTAxOwpuYW1lID0gSXRhbGljOwpzaGFwZXMgPSAoCnsKY2xvc2VkID0gMTsKbm9kZXMgPSAoCig0NzUsLTE2LG8pLAooNTQzLDEyNSxvKSwKKDU3OCwzNDMsY3MpLAooNjEyLDU1NSxvKSwKKDU3MSw3MjYsbyksCigzODQsNzI2LGNzKSwKKDE3OCw3MjYsbyksCigxMDMsNTg1LG8pLAooNjgsMzY3LGNzKSwKKDM0LDE1NSxvKSwKKDgyLC0xNixvKSwKKDI2OSwtMTYsY3MpCik7Cn0sCnsKY2xvc2VkID0gMTsKbm9kZXMgPSAoCigxMzUsNzMsbyksCigxNDAsMTk5LG8pLAooMTY1LDM2MCxjcyksCigxOTAsNTIwLG8pLAooMjMzLDYzNyxvKSwKKDM2OSw2MzcsY3MpLAooNTE1LDYzNyxvKSwKKDUwNiw1MTIsbyksCig0ODEsMzUyLGNzKSwKKDQ1NiwxOTEsbyksCig0MTMsNzMsbyksCigyODEsNzMsY3MpCik7Cn0sCnsKY2xvc2VkID0gMTsKbm9kZXMgPSAoCigzNzEuNDgzLCAyODUuNSxvKSwKKDM4Ny40ODMsIDMxOC41LG8pLAooMzkxLjQ4MywgMzU0LjUsY3MpLAooMzk1LjQ4MywgMzkxLjUsbyksCigzNjguNDgzLCA0MjQuNSxvKSwKKDMyNy40ODMsIDQyNC41LGNzKSwKKDI4Ni40ODMsIDQyNC41LG8pLAooMjU5LjQ4MywgMzkxLjUsbyksCigyNTUuNDgzLCAzNTQuNSxjcyksCigyNTEuNDgzLCAzMTguNSxvKSwKKDI3Ny40ODMsIDI4NS41LG8pLAooMzE4LjQ4MywgMjg1LjUsY3MpCik7Cn0KKTsKdmlzaWJsZSA9IDE7CndpZHRoID0gNjIwOwp9Cik7CnVuaWNvZGUgPSA0ODsKfQ==" | base64 -d > sources/0xProto-Italic.glyphspackage/glyphs/zero.glyph
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -48,7 +48,7 @@ jobs:
         run: make build
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: 0xType-ZeroDot${{ env.VERSION_PART }}
           path: fonts/
