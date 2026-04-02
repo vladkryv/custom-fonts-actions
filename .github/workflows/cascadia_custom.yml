@@ -71,6 +71,7 @@ jobs:
           if [ "$RUNNER_OS" = "macOS" ]; then brew install ttfautohint; else sudo apt-get install -y --no-install-recommends ttfautohint; fi
           python3 -m venv fonttools-venv
           . fonttools-venv/bin/activate
+          pip3 install -U setuptools
           pip3 install -r requirements.txt
           pip3 install git+https://github.com/daltonmaag/vttLib.git
       - name: Remove plus_plus ligatures
