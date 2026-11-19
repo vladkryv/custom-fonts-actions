@@ -13,15 +13,15 @@ on:
         description: 'Web fonts'
         type: boolean
         default: false
-      no_nerd_fonts:
+      nerd_fonts:
         description: 'NerdFonts'
         type: boolean
         default: false
-      no_mono:
+      mono:
         description: 'Mono'
         type: boolean
         default: false
-      no_powerline:
+      powerline:
         description: 'PowerLine'
         type: boolean
         default: false
@@ -100,13 +100,13 @@ jobs:
           if ${{ inputs.web_fonts }}; then
             BUILD_ARGS="$BUILD_ARGS -W"
           fi
-          if ! ${{ inputs.no_nerd_fonts }}; then
+          if ! ${{ inputs.nerd_fonts }}; then
             BUILD_ARGS="$BUILD_ARGS -NF"
           fi
-          if ! ${{ inputs.no_mono }}; then
+          if ! ${{ inputs.mono }}; then
             BUILD_ARGS="$BUILD_ARGS -M"
           fi
-          if ! ${{ inputs.no_powerline }}; then
+          if ! ${{ inputs.powerline }}; then
             BUILD_ARGS="$BUILD_ARGS -P"
           fi
           echo "Building with arguments: $BUILD_ARGS"
